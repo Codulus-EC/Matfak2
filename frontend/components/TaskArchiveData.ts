@@ -1,0 +1,39 @@
+export type ArchiveTask = {
+  year: number;
+  stage: "Отборочный тур" | "Заключительный тур";
+  group: string;
+  href: string;
+  fileName: string;
+  description: string;
+};
+
+export const solvedTaskArchive: ArchiveTask[] = [
+  { year: 2025, stage: "Заключительный тур", group: "5 класс · вариант 2", fileName: "5 класс — очный тур — вариант 2.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2025/03/5-класс.-Очный-тур.-Вариант-2.pdf", description: "Решения задач очного тура для 5 класса, вариант 2." },
+  { year: 2025, stage: "Заключительный тур", group: "5 класс · вариант 1", fileName: "5 класс — очный тур — вариант 1.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2025/03/5-класс.-Очный-тур.-Вариант-1.pdf", description: "Решения задач очного тура для 5 класса, вариант 1." },
+  { year: 2025, stage: "Заключительный тур", group: "6–7 классы · вариант 2", fileName: "6–7 классы — очный тур — вариант 2.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2025/03/6-7-класс.Очный-тур.-2-вариант.pdf", description: "Решения задач очного тура для 6–7 классов, вариант 2." },
+  { year: 2025, stage: "Заключительный тур", group: "6–7 классы · вариант 1", fileName: "6–7 классы — очный тур — вариант 1.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2025/03/6-7-класс.Очный-тур.-1-вариант.pdf", description: "Решения задач очного тура для 6–7 классов, вариант 1." },
+  { year: 2025, stage: "Заключительный тур", group: "8–9 классы · вариант 2", fileName: "8–9 классы — очный тур — вариант 2.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2025/03/8-9-класс.Очный-тур.-2-вариант.pdf", description: "Решения задач очного тура для 8–9 классов, вариант 2." },
+  { year: 2025, stage: "Заключительный тур", group: "8–9 классы · вариант 1", fileName: "8–9 классы — очный тур — вариант 1.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2025/03/8-9-класс.Очный-тур.-1-вариант.pdf", description: "Решения задач очного тура для 8–9 классов, вариант 1." },
+  { year: 2025, stage: "Заключительный тур", group: "10–11 классы · вариант 2", fileName: "10–11 классы — очный тур — вариант 2.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2025/03/10-11-класс.-Очный-тур.-2-вариант.pdf", description: "Решения задач очного тура для 10–11 классов, вариант 2." },
+  { year: 2025, stage: "Заключительный тур", group: "10–11 классы · вариант 1", fileName: "10–11 классы — очный тур — вариант 1.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2025/03/10-11-класс.Очный-тур.-1-вариант.pdf", description: "Решения задач очного тура для 10–11 классов, вариант 1." },
+  { year: 2025, stage: "Отборочный тур", group: "5 класс", fileName: "5 класс — заочный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2025/02/5-класс-заочный-тур-решения.pdf", description: "Решения задач отборочного (заочного) тура для 5 класса." },
+  { year: 2025, stage: "Отборочный тур", group: "6–7 классы", fileName: "6–7 классы — заочный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2025/02/6-7-класс-заочный-тур-решения.pdf", description: "Решения задач отборочного (заочного) тура для 6–7 классов." },
+  { year: 2025, stage: "Отборочный тур", group: "8–9 классы", fileName: "8–9 классы — заочный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2025/02/8-9-класс-заочный-тур-решения.pdf", description: "Решения задач отборочного (заочного) тура для 8–9 классов." },
+  { year: 2025, stage: "Отборочный тур", group: "10–11 классы", fileName: "10–11 классы — заочный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2025/02/10-11-класс-заочный-тур-решения.pdf", description: "Решения задач отборочного (заочного) тура для 10–11 классов." },
+
+  { year: 2024, stage: "Заключительный тур", group: "6–7 классы", fileName: "6–7 классы — очный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2024/03/Очный_тур_Олипиады_2024_6_7_класс_решения.pdf", description: "Решения задач заключительного тура 2024 для 6–7 классов." },
+  { year: 2024, stage: "Заключительный тур", group: "8–9 классы", fileName: "8–9 классы — очный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2024/03/Очный_тур_Олимпиады_2024_8_9_класс_решения-1.pdf", description: "Решения задач заключительного тура 2024 для 8–9 классов." },
+  { year: 2024, stage: "Заключительный тур", group: "10–11 классы", fileName: "10–11 классы — очный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2024/03/Очный_тур_Олимпиады_2024_10_11_класс_решения.pdf", description: "Решения задач заключительного тура 2024 для 10–11 классов." },
+  { year: 2024, stage: "Отборочный тур", group: "6–7 классы", fileName: "6–7 классы — отборочный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2024/02/6-7-класс-отборочный-тур-решения.pdf", description: "Решения задач отборочного тура 2024 для 6–7 классов." },
+  { year: 2024, stage: "Отборочный тур", group: "8–9 классы", fileName: "8–9 классы — отборочный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2024/02/8-9-класс-отборочный-тур-решения.pdf", description: "Решения задач отборочного тура 2024 для 8–9 классов." },
+  { year: 2024, stage: "Отборочный тур", group: "10–11 классы", fileName: "10–11 классы — отборочный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2024/02/10-11-класс-отборочный-тур-решение.pdf", description: "Решения задач отборочного тура 2024 для 10–11 классов." },
+
+  { year: 2023, stage: "Заключительный тур", group: "6–7 классы", fileName: "6–7 классы — очный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2023/03/Очный_тур_Олимпиады_решения_6_7_класс.pdf", description: "Решения задач заключительного тура 2023 для 6–7 классов." },
+  { year: 2023, stage: "Заключительный тур", group: "8–9 классы", fileName: "8–9 классы — очный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2023/03/Очный_тур_Олимпиады_решения_8_9_класс.pdf", description: "Решения задач заключительного тура 2023 для 8–9 классов." },
+  { year: 2023, stage: "Заключительный тур", group: "10–11 классы · вариант 1", fileName: "10–11 классы — очный тур — вариант 1.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2023/03/Очный_тур_Олимпиады_решения_10_11_класс_вариант_1.pdf", description: "Решения задач заключительного тура 2023 для 10–11 классов, вариант 1." },
+  { year: 2023, stage: "Заключительный тур", group: "10–11 классы · вариант 2", fileName: "10–11 классы — очный тур — вариант 2.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2023/03/Очный_тур_Олимпиады_решения_10_11_класс_вариант_2.pdf", description: "Решения задач заключительного тура 2023 для 10–11 классов, вариант 2." },
+  { year: 2023, stage: "Отборочный тур", group: "6 класс", fileName: "6 класс — заочный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2023/02/Zaochny_tur_Olimpiada_reshenia_6_klass.pdf", description: "Решения задач отборочного тура 2023 для 6 класса." },
+  { year: 2023, stage: "Отборочный тур", group: "7 класс", fileName: "7 класс — заочный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2023/02/Zaochny_tur_Olimpiada_reshenia_7_klass.pdf", description: "Решения задач отборочного тура 2023 для 7 класса." },
+  { year: 2023, stage: "Отборочный тур", group: "8–9 классы", fileName: "8–9 классы — заочный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2023/02/Zaochny_tur_Olimpiada_reshenia_8-9_klass.pdf", description: "Решения задач отборочного тура 2023 для 8–9 классов." },
+  { year: 2023, stage: "Отборочный тур", group: "10–11 классы", fileName: "10–11 классы — заочный тур — решения.pdf", href: "https://math.vsu.ru/wp/wp-content/uploads/2023/02/Zaochny_tur_Olimpiada_reshenia10-11klass.pdf", description: "Решения задач отборочного тура 2023 для 10–11 классов." },
+];

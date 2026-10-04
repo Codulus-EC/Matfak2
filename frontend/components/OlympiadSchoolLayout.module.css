@@ -1,0 +1,259 @@
+.section {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  min-height: 1360px;
+  margin-top: 0;
+  padding: 215px 0 210px;
+
+  /*
+    Расширенный переход после мятного блока олимпиады:
+    mint -> дымчато-сиреневый -> насыщенный lilac -> mint.
+    Цвет держится дольше, чтобы секция ощущалась полноценным экраном,
+    а не короткой вставкой.
+  */
+  background:
+    radial-gradient(circle at 18% 26%, rgba(255,255,255,.16), transparent 31%),
+    radial-gradient(circle at 78% 52%, rgba(245,230,255,.15), transparent 34%),
+    linear-gradient(
+      180deg,
+      #edf7ed 0%,
+      #edf8ef 5%,
+      #e9e9f1 13%,
+      #e3d1f1 22%,
+      #ddb9f3 33%,
+      #d8a8f2 46%,
+      #d6a0ef 63%,
+      #d8a5f0 74%,
+      #dfbaf2 84%,
+      #e8d9ef 92%,
+      #effaf1 100%
+    );
+}
+
+.inner {
+  position: relative;
+  z-index: 3;
+  width: min(1080px, calc(100% - 36px));
+  margin: 0 auto;
+}
+
+.guides {
+  position: absolute;
+  z-index: 2;
+  top: -42px;
+  left: 50%;
+  bottom: 104px;
+  width: min(1180px, calc(100% - 56px));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.guides span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 23px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.98);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.08),
+    0 0 14px rgba(255,255,255,.12);
+}
+
+.guides span:nth-child(1) {
+  left: 1.66%;
+  bottom: auto;
+  height: 330px;
+}
+
+.guides span:nth-child(2) {
+  left: 58.65%;
+  transform: translateX(-50%);
+  bottom: auto;
+  height: 420px;
+}
+
+.guides span:nth-child(3) {
+  right: 0;
+}
+
+.title {
+  position: relative;
+  z-index: 3;
+  margin: 0 0 98px;
+  max-width: 1000px;
+  transform: translateX(-34px);
+  color: #fff;
+  font-size: clamp(72px, 7vw, 108px);
+  font-weight: 900;
+  line-height: .92;
+  letter-spacing: -.045em;
+  text-align: left;
+}
+
+.placeholderGrid {
+  position: relative;
+  z-index: 4;
+
+  /*
+    УЖЕ, чем раньше:
+    - карточки больше не залезают на внешние белые линии;
+    - центральная линия остаётся ровно в промежутке между колонками.
+  */
+  width: min(1000px, calc(100vw - 110px));
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: 1.51fr 1fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+.rightStack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 25px;
+}
+
+.placeholder {
+  min-height: 292px;
+  border-radius: 34px;
+  background:
+    linear-gradient(145deg, rgba(231,231,231,.97), rgba(205,205,205,.96));
+  box-shadow:
+    0 22px 48px rgba(72, 40, 90, .065),
+    inset 0 1px 0 rgba(255,255,255,.38);
+}
+
+.placeholderTall { min-height: 618px; }
+
+.signup {
+  position: relative;
+  z-index: 4;
+  width: fit-content;
+  min-width: 300px;
+  min-height: 82px;
+  margin: 68px auto 0;
+  padding: 0 40px;
+  border-radius: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: linear-gradient(90deg, #8fe07a 0%, #45cd5f 100%);
+  text-decoration: none;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 18px 38px rgba(49, 159, 75, .20);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.signup:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 46px rgba(49, 159, 75, .27);
+}
+
+@media (max-width: 900px) {
+  .section {
+    min-height: 1160px;
+    padding: 180px 0 165px;
+  }
+
+  .inner { width: min(850px, calc(100% - 24px)); }
+
+  .guides {
+    top: -32px;
+    width: min(900px, calc(100% - 32px));
+  }
+
+  .guides span { width: 20px; }
+
+  .title {
+    margin-bottom: 78px;
+    transform: translateX(-22px);
+    font-size: clamp(60px, 7.6vw, 84px);
+  }
+
+  .placeholderGrid {
+    width: min(760px, calc(100vw - 70px));
+    grid-template-columns: 1.5fr 1fr;
+    gap: 28px;
+  }
+
+  .rightStack { gap: 20px; }
+
+  .guides span:nth-child(1) {
+    bottom: auto;
+    height: 330px;
+  }
+
+  .guides span:nth-child(2) {
+    bottom: auto;
+    height: 450px;
+  }
+
+  .placeholder { min-height: 230px; border-radius: 27px; }
+  .placeholderTall { min-height: 484px; }
+}
+
+@media (max-width: 620px) {
+  .section {
+    min-height: 980px;
+    padding: 138px 0 124px;
+  }
+
+  .inner { width: calc(100% - 14px); }
+
+  .guides {
+    top: -24px;
+    bottom: 78px;
+    width: calc(100% - 28px);
+  }
+
+  .guides span { width: 15px; }
+  .guides span:nth-child(1) { left: 2; }
+  .guides span:nth-child(2) { left: 60%; }
+  .guides span:nth-child(3) { right: 0; }
+
+  .title {
+    max-width: 96%;
+    margin: 0 0 68px 0;
+    transform: translateX(-4px);
+    font-size: 47px;
+    line-height: .98;
+  }
+
+  .placeholderGrid {
+    width: calc(100vw - 62px);
+    grid-template-columns: 1.48fr 1fr;
+    gap: 20px;
+  }
+
+  .rightStack { gap: 15px; }
+
+  .guides span:nth-child(1) {
+    bottom: auto;
+    height: 250px;
+  }
+
+  .guides span:nth-child(2) {
+    bottom: auto;
+    height: 335px;
+  }
+
+  .placeholder { min-height: 176px; border-radius: 21px; }
+  .placeholderTall { min-height: 367px; }
+
+  .signup {
+    min-width: 196px;
+    min-height: 54px;
+    margin-top: 44px;
+    padding: 0 24px;
+    border-radius: 18px;
+    font-size: 23px;
+  }
+}

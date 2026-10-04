@@ -1,0 +1,384 @@
+.contactSection {
+  background: linear-gradient(135deg, #126b50 0%, #0a4a39 48%, #06372c 100%);
+  color: #fff;
+}
+
+/*
+  V4:
+  - левая часть с текстом сохраняется крупной;
+  - карта примерно в 1.5 раза уже предыдущей;
+  - карта примерно в 2 раза выше предыдущей;
+  - секция сама растёт по высоте под новую карту.
+*/
+.contactScreen {
+  min-height: 1005px;
+  display: flex;
+  align-items: center;
+  padding: 46.9px 29.48px 60.3px;
+}
+
+.contactGrid {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(348.4px, .82fr) minmax(509.2px, 1.18fr);
+  gap: clamp(36.18px, 4vw, 56.28px);
+  align-items: center;
+}
+
+.contactCopy {
+  width: 100%;
+  max-width: 455.6px;
+  align-self: center;
+}
+
+.kicker {
+  display: block;
+  margin-bottom: 12.06px;
+  color: #9df0bc;
+  font-size: clamp(12.06px, 1.15vw, 15.41px);
+  font-weight: 900;
+  letter-spacing: .24em;
+}
+
+.contactCopy h2 {
+  margin: 0 0 20.1px;
+  max-width: 482.4px;
+  font-size: clamp(69.68px, 7.1vw, 96.48px);
+  line-height: .84;
+  letter-spacing: -.065em;
+}
+
+.lead {
+  margin: 0 0 32.16px;
+  color: #d6ede3;
+  font-size: clamp(18.76px, 1.7vw, 23.45px);
+  line-height: 1.42;
+}
+
+.contactGroup {
+  margin-bottom: 25.46px;
+}
+
+.contactGroup h3,
+.socialBlock h3 {
+  margin: 0 0 9.38px;
+  font-size: clamp(19.43px, 1.8vw, 24.12px);
+  line-height: 1.15;
+}
+
+.contactGroup a {
+  display: block;
+  width: fit-content;
+  margin: 4.69px 0;
+  color: #d0f5df;
+  font-size: clamp(15.41px, 1.38vw, 18.76px);
+  line-height: 1.62;
+  text-decoration: none;
+}
+
+.contactGroup a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.socialBlock {
+  margin-top: 25.46px;
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: 14.74px;
+  margin-top: 12.06px;
+}
+
+.socialRow a,
+.socialPlaceholder {
+  width: 58.96px;
+  height: 58.96px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 0.67px solid rgba(255,255,255,.24);
+  background: rgba(255,255,255,.10);
+  box-shadow: 0 6.7px 16.75px rgba(0,0,0,.12);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.socialRow a:hover {
+  transform: translateY(-2.68px) scale(1.03);
+  box-shadow: 0 10.72px 20.1px rgba(0,0,0,.18);
+}
+
+.socialRow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.socialPlaceholder {
+  opacity: .96;
+  cursor: default;
+}
+
+.contactCta {
+  margin-top: 26.8px;
+  min-height: 46.9px;
+  width: fit-content;
+  padding: 0 20.1px;
+  border-radius: 10.72px;
+  display: inline-flex;
+  align-items: center;
+  gap: 13.4px;
+  background: #ccf5d9;
+  color: #0c523d;
+  font-size: clamp(14.07px, 1.25vw, 17.42px);
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 8.04px 17.42px rgba(0,0,0,.08);
+}
+
+.contactCta:hover {
+  background: #e0fae8;
+}
+
+.mapWrap {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  Было: карта занимала 100% правой колонки.
+  Стало: 66.666% ширины => примерно в 1.5 раза уже.
+  Высота увеличена примерно в 2 раза относительно прошлого видимого размера.
+*/
+.mapCard {
+  position: relative;
+  width: 100%;
+  max-width: 864.3px;
+  height: 790.6px;
+  min-height: 790.6px;
+  border-radius: 21.44px;
+  overflow: hidden;
+  background: #dcebe4;
+  border: 1.34px solid rgba(255,255,255,.18);
+  box-shadow: 0 20.1px 50.25px rgba(0,0,0,.24);
+}
+
+.mapCard iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.mapCard > a {
+  position: absolute;
+  left: 16.08px;
+  bottom: 16.08px;
+  min-height: 41.54px;
+  padding: 0 17.42px;
+  border-radius: 10.72px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9.38px;
+  background: #0c684d;
+  color: #fff;
+  font-size: 13.4px;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 8.04px 18.76px rgba(0,0,0,.22);
+}
+
+.footerBar {
+  width: 100%;
+  padding: 28.14px clamp(37.52px, 4.6vw, 61.64px);
+  border-top: 0.67px solid rgba(255,255,255,.13);
+  background: rgba(1,38,30,.56);
+  display: grid;
+  grid-template-columns: 1.55fr .62fr .62fr .8fr;
+  gap: 33.5px;
+  align-items: start;
+}
+
+.footerBrand {
+  display: flex;
+  align-items: center;
+  gap: 10.72px;
+}
+
+.footerBrand img {
+  border-radius: 8.71px;
+}
+
+.footerBrand div {
+  display: flex;
+  flex-direction: column;
+  gap: 4.02px;
+}
+
+.footerBrand strong,
+.footerColumn strong {
+  font-size: 12.06px;
+}
+
+.footerBrand span,
+.footerColumn a {
+  color: #bcd9cc;
+  font-size: 10.05px;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 5.36px;
+}
+
+.footerColumn a:hover {
+  color: #fff;
+}
+
+.copyright {
+  min-height: 36.18px;
+  padding: 0 clamp(37.52px, 4.6vw, 61.64px);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 13.4px;
+  background: #052b23;
+  color: #9fbeb1;
+  font-size: 8.71px;
+}
+
+.copyright span:nth-child(2) {
+  text-align: center;
+}
+
+.copyright a {
+  color: #a9cbbd;
+  text-align: right;
+  text-decoration: underline;
+}
+
+@media (max-width: 1005px) {
+  .contactScreen {
+    min-height: 857.6px;
+    padding-inline: 20.1px;
+  }
+
+  .contactGrid {
+    grid-template-columns: minmax(281.4px, .85fr) minmax(415.4px, 1.15fr);
+    gap: 28.14px;
+  }
+
+  .contactCopy h2 {
+    font-size: clamp(58.96px, 6.4vw, 80.4px);
+  }
+
+  .mapCard {
+    width: 100%;
+    max-width: 763.8px;
+    height: 656.6px;
+    min-height: 656.6px;
+  }
+}
+
+@media (max-width: 750.4px) {
+  .contactScreen {
+    min-height: auto;
+    padding: 67px 17.42px 46.9px;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 38.86px;
+  }
+
+  .contactCopy {
+    max-width: 509.2px;
+  }
+
+  .mapCard {
+    width: 100%;
+    max-width: none;
+    height: 509.2px;
+    min-height: 0;
+  }
+
+  .footerBar {
+    grid-template-columns: 1.3fr 1fr 1fr;
+    padding-inline: 17.42px;
+  }
+
+  .footerColumn:last-child {
+    display: none;
+  }
+
+  .copyright {
+    padding-inline: 17.42px;
+  }
+}
+
+@media (max-width: 482.4px) {
+  .contactScreen {
+    padding: 56.28px 10.72px 36.18px;
+  }
+
+  .contactCopy h2 {
+    font-size: 44.22px;
+  }
+
+  .lead {
+    font-size: 14.07px;
+  }
+
+  .contactGroup h3,
+  .socialBlock h3 {
+    font-size: 14.74px;
+  }
+
+  .contactGroup a {
+    font-size: 12.06px;
+  }
+
+  .mapCard {
+    width: 100%;
+    height: 348.4px;
+    border-radius: 16.08px;
+  }
+
+  .socialRow a,
+  .socialPlaceholder {
+    width: 44.22px;
+    height: 44.22px;
+  }
+
+  .footerBar {
+    grid-template-columns: 1fr;
+    gap: 17.42px;
+  }
+
+  .footerColumn {
+    display: none;
+  }
+
+  .copyright {
+    grid-template-columns: 1fr;
+    gap: 5.36px;
+    padding: 12.06px 10.72px;
+  }
+
+  .copyright span:nth-child(2),
+  .copyright a {
+    text-align: left;
+  }
+}

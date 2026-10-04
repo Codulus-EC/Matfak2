@@ -1,0 +1,229 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100svh;
+  overflow: hidden;
+  color: #fff;
+  background: #063f4a;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  transform: scale(1.01);
+  transition: opacity .8s ease, transform 6s ease;
+}
+
+.activeBg {
+  opacity: 1;
+  transform: scale(1.025);
+}
+
+/* V4: весь hero-контент примерно в 1.5 раза крупнее V3 */
+.copy {
+  position: absolute;
+  z-index: 5;
+  left: 4.0vw;
+  top: 50%;
+  transform: translateY(-20%);
+  width: min(63vw, 790.6px);
+}
+
+.eyebrow {
+  margin-bottom: 13.4px;
+  font-size: clamp(13.4px, 1.4vw, 19.43px);
+  font-weight: 900;
+  letter-spacing: .14em;
+}
+
+.copy h1 {
+  margin: 0;
+  line-height: .90;
+  letter-spacing: -.05em;
+}
+
+.copy h1 > span {
+  display: block;
+  font-size: clamp(90.45px, 10.7vw, 137.35px);
+  font-weight: 900;
+}
+
+.copy h1 b {
+  display: block;
+  margin-top: 9.38px;
+  font-size: clamp(58.96px, 7.0vw, 91.12px);
+  font-weight: 900;
+  letter-spacing: -.045em;
+  white-space: nowrap;
+}
+
+.copy h1 em {
+  font-style: italic;
+}
+
+.copy > p {
+  margin: 21.44px 0 18.76px;
+  font-size: clamp(21.44px, 2.25vw, 29.48px);
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13.4px;
+}
+
+.button {
+  min-width: 207.7px;
+  min-height: 50.92px;
+  padding: 0 22.78px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20.1px;
+  border-radius: 12.06px;
+  border: 1.01px solid rgba(255,255,255,.88);
+  color: #fff;
+  text-decoration: none;
+  font-size: clamp(15.41px, 1.55vw, 20.1px);
+  font-weight: 900;
+}
+
+.primary {
+  background: linear-gradient(90deg, #7de0c8, #6a9343);
+}
+
+.outline {
+  background: rgba(0,30,38,.28);
+}
+
+.switcher {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  bottom: 14.74px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6.7px;
+  padding: 4.69px 6.7px;
+  border: 0.67px solid rgba(255,255,255,.25);
+  border-radius: 669.33px;
+  background: rgba(3,35,41,.42);
+  backdrop-filter: blur(6.7px);
+}
+
+.switcher > button {
+  width: 21.44px;
+  height: 21.44px;
+  border: 0.67px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 15.41px;
+  line-height: 1;
+}
+
+.dots {
+  display: flex;
+  gap: 4.69px;
+}
+
+.dots button {
+  width: 7.37px;
+  height: 7.37px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.5);
+}
+
+.dots button.activeDot {
+  background: #7fe09a;
+  box-shadow: 0 0 0 2.01px rgba(127,224,154,.2);
+}
+
+@media (max-width: 938px) {
+  .copy {
+    left: 3.2vw;
+    top: 50%;
+    width: 66vw;
+    transform: translateY(-18%);
+  }
+
+  .eyebrow {
+    font-size: 12.73px;
+  }
+
+  .copy h1 > span {
+    font-size: clamp(77.05px, 9.4vw, 100.5px);
+  }
+
+  .copy h1 b {
+    font-size: clamp(50.92px, 6.2vw, 67px);
+  }
+
+  .copy > p {
+    font-size: clamp(18.76px, 2.15vw, 23.45px);
+  }
+
+  .button {
+    min-width: 180.9px;
+    min-height: 45.56px;
+    padding: 0 18.76px;
+    font-size: 14.74px;
+  }
+}
+
+@media (max-width: 536px) {
+  .hero {
+    min-height: 509.2px;
+    height: 100svh;
+  }
+
+  .copy {
+    left: 13.4px;
+    right: 13.4px;
+    width: auto;
+    top: 46%;
+    transform: translateY(-5%);
+  }
+
+  .eyebrow {
+    font-size: 8.71px;
+    margin-bottom: 10.72px;
+  }
+
+  .copy h1 > span {
+    font-size: 48.24px;
+  }
+
+  .copy h1 b {
+    font-size: 32.16px;
+    white-space: normal;
+    margin-top: 6.7px;
+  }
+
+  .copy > p {
+    font-size: 14.07px;
+    margin: 14.74px 0 12.06px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6.7px;
+  }
+
+  .button {
+    min-width: 157.45px;
+    min-height: 37.52px;
+    padding: 0 13.4px;
+    font-size: 11.39px;
+  }
+}
