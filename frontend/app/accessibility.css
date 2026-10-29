@@ -1,0 +1,113 @@
+/* Глобальные настройки версии для слабовидящих.
+   Этот файл намеренно НЕ CSS Module: селекторы относятся ко всему сайту. */
+
+html[data-access-scale="90"] body { zoom: .90; }
+html[data-access-scale="100"] body { zoom: 1; }
+html[data-access-scale="110"] body { zoom: 1.10; }
+html[data-access-scale="120"] body { zoom: 1.20; }
+
+/* Настоящий высококонтрастный режим: чёрный фон + жёлтый текст. */
+html[data-access-contrast="on"],
+html[data-access-contrast="on"] body {
+  background: #000 !important;
+  color: #ffe600 !important;
+  filter: none !important;
+}
+
+html[data-access-contrast="on"] body * {
+  border-color: #ffe600 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+html[data-access-contrast="on"] header,
+html[data-access-contrast="on"] main,
+html[data-access-contrast="on"] footer,
+html[data-access-contrast="on"] section,
+html[data-access-contrast="on"] article,
+html[data-access-contrast="on"] nav,
+html[data-access-contrast="on"] aside,
+html[data-access-contrast="on"] [role="dialog"] {
+  background-color: #000 !important;
+  background-image: none !important;
+  color: #ffe600 !important;
+}
+
+html[data-access-contrast="on"] h1,
+html[data-access-contrast="on"] h2,
+html[data-access-contrast="on"] h3,
+html[data-access-contrast="on"] h4,
+html[data-access-contrast="on"] h5,
+html[data-access-contrast="on"] h6,
+html[data-access-contrast="on"] p,
+html[data-access-contrast="on"] span,
+html[data-access-contrast="on"] strong,
+html[data-access-contrast="on"] small,
+html[data-access-contrast="on"] label,
+html[data-access-contrast="on"] li,
+html[data-access-contrast="on"] time {
+  color: #ffe600 !important;
+}
+
+html[data-access-contrast="on"] a {
+  color: #fff200 !important;
+  text-decoration-color: #fff200 !important;
+}
+
+html[data-access-contrast="on"] button,
+html[data-access-contrast="on"] input,
+html[data-access-contrast="on"] select,
+html[data-access-contrast="on"] textarea {
+  background: #000 !important;
+  color: #ffe600 !important;
+  border: 2px solid #ffe600 !important;
+}
+
+html[data-access-contrast="on"] button:hover,
+html[data-access-contrast="on"] a[role="button"]:hover {
+  background: #ffe600 !important;
+  color: #000 !important;
+}
+
+html[data-access-contrast="on"] input::placeholder,
+html[data-access-contrast="on"] textarea::placeholder {
+  color: #fff59d !important;
+  opacity: 1 !important;
+}
+
+html[data-access-contrast="on"] img,
+html[data-access-contrast="on"] video,
+html[data-access-contrast="on"] picture {
+  filter: contrast(1.35) grayscale(.15) !important;
+}
+
+html[data-access-contrast="on"] svg {
+  color: #ffe600 !important;
+}
+
+html[data-access-contrast="on"] hr {
+  border-color: #ffe600 !important;
+}
+
+html[data-access-images="off"] main img,
+html[data-access-images="off"] main picture,
+html[data-access-images="off"] main video {
+  visibility: hidden !important;
+}
+
+html[data-access-images="off"] main [style*="background-image"] {
+  background-image: none !important;
+}
+
+html[data-access-spacing="on"] main p,
+html[data-access-spacing="on"] main li,
+html[data-access-spacing="on"] main a,
+html[data-access-spacing="on"] main button,
+html[data-access-spacing="on"] main h1,
+html[data-access-spacing="on"] main h2,
+html[data-access-spacing="on"] main h3,
+html[data-access-spacing="on"] main h4,
+html[data-access-spacing="on"] main span {
+  letter-spacing: .035em !important;
+  line-height: 1.48 !important;
+}
