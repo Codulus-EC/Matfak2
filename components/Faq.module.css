@@ -1,0 +1,388 @@
+.section {
+  position: relative;
+  overflow: hidden;
+
+  /*
+    ВАЖНО: ОДИН фон на весь FAQ + "Остались вопросы".
+    Поэтому между секциями больше не может появиться резкий шов.
+  */
+  background:
+    radial-gradient(circle at 10% 12%, rgba(153, 228, 207, .10), transparent 30%),
+    radial-gradient(circle at 89% 15%, rgba(192, 174, 238, .05), transparent 30%),
+    linear-gradient(
+      180deg,
+      #fffaf8 0%,
+      #fbfcfa 18%,
+      #f4fbf7 35%,
+      #e8f7ee 51%,
+      #cfeadb 64%,
+      #8dbfa8 76%,
+      #478c70 88%,
+      #126b50 100%
+    );
+}
+
+/* ---------- FAQ ---------- */
+
+.faqArea {
+  min-height: 509.2px;
+  padding: clamp(73.7px, 10vh, 100.5px) 0 clamp(83.75px, 12vh, 113.9px);
+  background: transparent;
+}
+
+.inner {
+  width: min(1125.6px, calc(100vw - 67px));
+  margin: 0 auto;
+}
+
+.headingRow {
+  display: grid;
+  grid-template-columns: minmax(348.4px, .95fr) minmax(348.4px, 1.05fr);
+  align-items: end;
+  gap: clamp(53.6px, 7vw, 90.45px);
+  margin-bottom: 41.54px;
+}
+
+.headingBlock {
+  min-width: 0;
+}
+
+.kicker {
+  display: block;
+  margin-bottom: 12.06px;
+  color: #2d8b79;
+  font-size: clamp(12.73px, 1vw, 15.41px);
+  font-weight: 900;
+  letter-spacing: .15em;
+}
+
+.headingBlock h2 {
+  margin: 0;
+  color: #083b32;
+  font-size: clamp(69.68px, 6.8vw, 96.48px);
+  line-height: .80;
+  letter-spacing: -.065em;
+}
+
+.intro {
+  max-width: 415.4px;
+  margin: 0 0 6.7px;
+  color: #4b6c63;
+  font-size: clamp(16.75px, 1.5vw, 20.77px);
+  line-height: 1.45;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14.74px 18.76px;
+}
+
+.item {
+  overflow: hidden;
+  border: 1.01px solid rgba(44, 148, 130, .26);
+  border-radius: 14.74px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.96), rgba(243,251,247,.90));
+  box-shadow:
+    0 10.05px 22.78px rgba(25,86,71,.06),
+    inset 0 0.67px 0 rgba(255,255,255,.92);
+  backdrop-filter: blur(2.01px);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.item:hover {
+  transform: translateY(-2.01px);
+  border-color: rgba(44,148,130,.48);
+  box-shadow: 0 14.74px 26.8px rgba(25,86,71,.10);
+}
+
+.item button {
+  width: 100%;
+  min-height: 61.64px;
+  padding: 0 14.74px 0 20.1px;
+  border: 0;
+  background: transparent;
+  color: #103f36;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14.74px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.item button span {
+  font-size: clamp(14.07px, 1.18vw, 16.75px);
+  line-height: 1.2;
+  font-weight: 850;
+}
+
+.item button b {
+  flex: 0 0 auto;
+  width: 33.5px;
+  height: 33.5px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(135deg, #58c5b2, #238f80);
+  font-size: 20.77px;
+  line-height: 1;
+  box-shadow: 0 6.03px 13.4px rgba(33,143,128,.22);
+}
+
+.answer {
+  margin: -1.34px 20.1px 18.76px;
+  padding-top: 13.4px;
+  border-top: 0.67px solid rgba(44,148,130,.15);
+  color: #55746c;
+  font-size: 12.73px;
+  line-height: 1.6;
+}
+
+.open {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.985), rgba(235,248,243,.94));
+}
+
+/* ---------- ОСТАЛИСЬ ВОПРОСЫ ---------- */
+
+.questionArea {
+  position: relative;
+  min-height: 469px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.photoLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+
+  /*
+    Фото проявляется внутри ТОГО ЖЕ градиента,
+    поэтому верх не начинается отдельной полосой.
+  */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0,0,0,.18) 7%,
+    rgba(0,0,0,.48) 17%,
+    rgba(0,0,0,.78) 31%,
+    #000 46%,
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0,0,0,.18) 7%,
+    rgba(0,0,0,.48) 17%,
+    rgba(0,0,0,.78) 31%,
+    #000 46%,
+    #000 100%
+  );
+}
+
+.photoLayer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(232,247,238,.18) 0%,
+      rgba(150,205,181,.20) 28%,
+      rgba(53,131,98,.42) 60%,
+      rgba(18,107,80,.76) 86%,
+      #126b50 100%
+    );
+}
+
+.photoLayer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  display: block;
+}
+
+.questionContent {
+  position: relative;
+  z-index: 2;
+  width: min(1125.6px, calc(100vw - 67px));
+  min-height: 469px;
+  margin: 0 auto;
+  padding: 73.7px 0 83.75px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  text-align: center;
+}
+
+.questionContent h3 {
+  margin: 0 0 28.14px;
+  font-size: clamp(64.32px, 6.8vw, 92.46px);
+  line-height: .88;
+  letter-spacing: -.058em;
+}
+
+.questionContent a {
+  min-width: 314.9px;
+  min-height: 57.62px;
+  padding: 0 25.46px;
+  border-radius: 17.42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13.4px;
+
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(124,190,177,.96), rgba(128,169,99,.97));
+  border: 0.67px solid rgba(255,255,255,.24);
+  text-decoration: none;
+
+  font-size: clamp(18.09px, 1.65vw, 22.11px);
+  font-weight: 900;
+
+  box-shadow: 0 12.06px 25.46px rgba(0,0,0,.18);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.questionContent a:hover {
+  transform: translateY(-2.68px);
+  box-shadow: 0 16.75px 32.16px rgba(0,0,0,.24);
+}
+
+.questionContent a b {
+  font-size: 26.8px;
+  line-height: .8;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 857.6px) {
+  .faqArea {
+    min-height: 455.6px;
+    padding-top: 61.64px;
+  }
+
+  .inner,
+  .questionContent {
+    width: min(790.6px, calc(100vw - 37.52px));
+  }
+
+  .headingRow {
+    grid-template-columns: 1fr 1fr;
+    gap: 40.2px;
+  }
+
+  .headingBlock h2 {
+    font-size: 62.98px;
+  }
+
+  .intro {
+    font-size: 16.08px;
+  }
+
+  .item button {
+    min-height: 54.94px;
+  }
+
+  .questionArea,
+  .questionContent {
+    min-height: 402px;
+  }
+}
+
+@media (max-width: 629.8px) {
+  .faqArea {
+    min-height: auto;
+    padding: 50.92px 0 61.64px;
+  }
+
+  .inner,
+  .questionContent {
+    width: calc(100vw - 24.12px);
+  }
+
+  .headingRow {
+    grid-template-columns: 1fr;
+    gap: 22.78px;
+    margin-bottom: 29.48px;
+  }
+
+  .intro {
+    max-width: 482.4px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .questionArea,
+  .questionContent {
+    min-height: 355.1px;
+  }
+
+  .questionContent {
+    padding: 46.9px 0 58.96px;
+  }
+}
+
+@media (max-width: 428.8px) {
+  .faqArea {
+    padding: 40.2px 0 48.24px;
+  }
+
+  .inner,
+  .questionContent {
+    width: calc(100vw - 14.74px);
+  }
+
+  .headingBlock h2 {
+    font-size: 42.88px;
+  }
+
+  .intro {
+    font-size: 12.73px;
+  }
+
+  .item button {
+    min-height: 45.56px;
+    padding: 0 8.71px 0 11.39px;
+  }
+
+  .item button span {
+    font-size: 10.72px;
+  }
+
+  .item button b {
+    width: 26.8px;
+    height: 26.8px;
+  }
+
+  .questionArea,
+  .questionContent {
+    min-height: 308.2px;
+  }
+
+  .questionContent h3 {
+    font-size: 37.52px;
+  }
+
+  .questionContent a {
+    width: min(100%, 261.3px);
+    min-width: 0;
+    min-height: 44.22px;
+    font-size: 13.4px;
+  }
+}

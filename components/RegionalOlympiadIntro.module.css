@@ -1,0 +1,209 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 74px 0 0;
+  background:
+    radial-gradient(circle at 50% 22%, rgba(167, 122, 210, 0.045), transparent 32%),
+    linear-gradient(180deg, #f2fff2 0%, #f0fff1 74%, #edf7ed 100%);
+}
+
+.inner {
+  width: min(1180px, calc(100% - 56px));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  color: #8345a9;
+  font-size: clamp(62px, 5.3vw, 92px);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+
+.description {
+  margin: 54px auto 0;
+  color: #a16bc2;
+  font-size: clamp(25px, 2vw, 36px);
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.cards {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+
+  /* Было 68px + translateY(34px), из-за чего карточки визуально
+     опускались ниже своей секции и обрезались overflow: hidden. */
+  margin-top: 40px;
+  transform: none;
+}
+
+.card {
+  min-height: 235px;
+  padding: 18px 18px 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #082b20;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  box-shadow: 0 12px 28px rgba(58, 34, 79, 0.045);
+}
+
+.cardPurple {
+  border: 3px solid #c98ce7;
+}
+
+.cardBlue {
+  border: 3px solid #9ba4ff;
+  align-items: center;
+  text-align: center;
+}
+
+.cardPink {
+  border: 3px solid #ff939e;
+}
+
+.card span {
+  display: block;
+  font-size: clamp(18px, 1.4vw, 25px);
+  font-weight: 850;
+  line-height: 1.04;
+}
+
+.card strong {
+  margin-top: 9px;
+  font-size: clamp(48px, 4vw, 69px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+
+.card b {
+  margin-top: 3px;
+  font-size: clamp(34px, 2.8vw, 49px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.twoStages {
+  margin: 0 0 10px !important;
+  white-space: nowrap;
+}
+
+.stagePill {
+  width: fit-content;
+  margin-top: 7px;
+  padding: 5px 8px;
+  border: 3px solid #aeb0ff;
+  border-radius: 8px;
+  font-size: clamp(18px, 1.35vw, 24px);
+  font-weight: 850;
+  line-height: 1;
+  background: rgba(255,255,255,.48);
+}
+
+.mainBuilding {
+  margin-top: 10px !important;
+  font-size: clamp(38px, 3.15vw, 54px) !important;
+  line-height: 0.94 !important;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding-top: 54px;
+  }
+
+  .inner {
+    width: min(900px, calc(100% - 32px));
+  }
+
+  .description {
+    margin-top: 36px;
+  }
+
+  .cards {
+    gap: 10px;
+    margin-top: 38px;
+    transform: none;
+  }
+
+  .card {
+    min-height: 170px;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 620px) {
+  .section {
+    padding-top: 44px;
+  }
+
+  .inner {
+    width: calc(100% - 16px);
+  }
+
+  .title {
+    font-size: 39px;
+  }
+
+  .description {
+    margin-top: 28px;
+    font-size: 17px;
+    line-height: 1.18;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+    margin-top: 28px;
+    transform: none;
+  }
+
+  .card {
+    min-height: 116px;
+    padding: 8px 7px;
+    border-radius: 6px;
+  }
+
+  .cardPurple,
+  .cardBlue,
+  .cardPink {
+    border-width: 2px;
+  }
+
+  .card span {
+    font-size: 11px;
+  }
+
+  .card strong {
+    font-size: 27px;
+  }
+
+  .card b {
+    font-size: 19px;
+  }
+
+  .twoStages {
+    font-size: 25px !important;
+  }
+
+  .stagePill {
+    margin-top: 4px;
+    padding: 3px 4px;
+    border-width: 2px;
+    border-radius: 5px;
+    font-size: 11px;
+  }
+
+  .mainBuilding {
+    font-size: 20px !important;
+  }
+}
