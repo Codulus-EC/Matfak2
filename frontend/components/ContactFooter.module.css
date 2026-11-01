@@ -1,6 +1,12 @@
 .contactSection {
-  background: linear-gradient(135deg, #126b50 0%, #0a4a39 48%, #06372c 100%);
+  position: relative;
+  overflow: hidden;
+  background: #126b50;
   color: #fff;
+}
+
+.contactSection::before {
+  content: none;
 }
 
 /*
@@ -11,6 +17,8 @@
   - секция сама растёт по высоте под новую карту.
 */
 .contactScreen {
+  position: relative;
+  z-index: 1;
   min-height: 1005px;
   display: flex;
   align-items: center;
@@ -198,10 +206,12 @@
 }
 
 .footerBar {
+  position: relative;
+  z-index: 1;
   width: 100%;
   padding: 28.14px clamp(37.52px, 4.6vw, 61.64px);
-  border-top: 0.67px solid rgba(255,255,255,.13);
-  background: rgba(1,38,30,.56);
+  border-top: 0;
+  background: #0f6049;
   display: grid;
   grid-template-columns: 1.55fr .62fr .62fr .8fr;
   gap: 33.5px;
@@ -248,14 +258,16 @@
 }
 
 .copyright {
+  position: relative;
+  z-index: 1;
   min-height: 36.18px;
   padding: 0 clamp(37.52px, 4.6vw, 61.64px);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   gap: 13.4px;
-  background: #052b23;
-  color: #9fbeb1;
+  background: #0b513e;
+  color: #b8d5c9;
   font-size: 8.71px;
 }
 
@@ -382,3 +394,55 @@
     text-align: left;
   }
 }
+
+/* Холодная серо-голубая тема для страницы «О факультете».
+   Один непрерывный фон на всю контактную секцию + футер, без видимых полос. */
+.aboutTheme {
+  margin-top: -1px;
+  background: linear-gradient(
+    180deg,
+    #356360 0%,
+    #45686d 18%,
+    #506a74 36%,
+    #485f69 58%,
+    #3c535d 78%,
+    #314750 100%
+  );
+}
+
+.aboutTheme::before {
+  content: none;
+}
+
+.aboutTheme .kicker { color: #d5e3ea; }
+.aboutTheme .lead { color: #e4edf1; }
+.aboutTheme .contactGroup a { color: #dbe7ec; }
+.aboutTheme .contactCta {
+  background: linear-gradient(90deg, #eef4f7, #d7e3e9);
+  color: #344a56;
+  box-shadow: 0 8.04px 17.42px rgba(17,31,39,.16);
+}
+.aboutTheme .contactCta:hover { background: linear-gradient(90deg, #ffffff, #e4edf1); }
+.aboutTheme .socialRow a,
+.aboutTheme .socialPlaceholder {
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.09);
+  box-shadow: 0 6.7px 16.75px rgba(16,30,38,.18);
+}
+.aboutTheme .mapCard {
+  background: #dce6eb;
+  border-color: rgba(255,255,255,.18);
+  box-shadow: 0 20.1px 50.25px rgba(16,29,37,.25);
+}
+.aboutTheme .mapCard > a { background: #455f6d; }
+.aboutTheme .footerBar {
+  background: transparent;
+  border-top: 0;
+}
+.aboutTheme .footerBrand span,
+.aboutTheme .footerColumn a { color: #cad9e0; }
+.aboutTheme .copyright {
+  background: transparent;
+  color: #acbec7;
+}
+.aboutTheme .copyright a { color: #bfd0d8; }

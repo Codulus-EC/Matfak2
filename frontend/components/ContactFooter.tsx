@@ -4,11 +4,14 @@ import styles from "./ContactFooter.module.css";
 const mapEmbed = "https://yandex.ru/map-widget/v1/?mode=search&text=%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%B5%D0%B6%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82%2C%20%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C%2C%201&z=16";
 const mapLink = "https://yandex.ru/maps/?text=%D0%92%D0%93%D0%A3%20%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C%201";
 
-export function ContactFooter({ school = false }: { school?: boolean }) {
+export function ContactFooter({ school = false, theme = "default" }: { school?: boolean; theme?: "default" | "about" }) {
   const email = school ? "kiseleva@math.vsu.ru" : "deanery@math.vsu.ru";
+  const roomLine = school
+    ? "главный корпус ВГУ, ауд. 319"
+    : "главный корпус ВГУ, 3 этаж, ауд. 333А";
 
   return (
-    <footer className={styles.contactSection} id={school ? "school-contacts" : "contacts"}>
+    <footer className={`${styles.contactSection} ${theme === "about" ? styles.aboutTheme : ""}`} id={school ? "school-contacts" : "contacts"}>
       <div className={styles.contactScreen}>
         <div className={styles.contactGrid}>
           <div className={styles.contactCopy}>
@@ -21,7 +24,7 @@ export function ContactFooter({ school = false }: { school?: boolean }) {
               <a href={mapLink} target="_blank" rel="noreferrer">
                 394018, Россия, г. Воронеж<br />
                 Университетская площадь, 1<br />
-                главный корпус ВГУ, 3 этаж, ауд. 333А
+                {roomLine}
               </a>
             </div>
 
@@ -45,9 +48,6 @@ export function ContactFooter({ school = false }: { school?: boolean }) {
                 <a href="https://t.me/math_vsu" target="_blank" rel="noreferrer" aria-label="Telegram">
                   <Image src="/images/social/telegram.png" alt="Telegram" width={82} height={82} />
                 </a>
-                <span className={styles.socialPlaceholder} title="Ссылка сообщества MAX будет добавлена позже" aria-label="MAX">
-                  <Image src="/images/social/max.png" alt="MAX" width={82} height={82} />
-                </span>
               </div>
             </div>
 
@@ -83,13 +83,13 @@ export function ContactFooter({ school = false }: { school?: boolean }) {
 
         <div className={styles.footerColumn}>
           <strong>Факультет</strong>
-          <a href="#why">О факультете</a>
-          <a href="#events">Новости</a>
+          <a href="/about">О факультете</a>
+          <a href="/news">Новости</a>
         </div>
 
         <div className={styles.footerColumn}>
           <strong>Поступление</strong>
-          <a href="#programs">Абитуриентам</a>
+          <a href="/applicants">Абитуриентам</a>
           <a href="/schoolchildren">Школьникам</a>
         </div>
 
