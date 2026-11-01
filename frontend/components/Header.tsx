@@ -4,6 +4,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { siteLanguages, useSiteTranslator } from "@/lib/siteTranslator";
+import { uploadAdminSchedule } from "@/lib/adminBlobClient";
 import styles from "./Header.module.css";
 
 type MenuItem = {
@@ -147,12 +148,7 @@ function ScheduleMenu({ canEdit }: { canEdit: boolean }) {
     setUploading(kind);
     setMessage("");
     try {
-      const form = new FormData();
-      form.append("kind", kind);
-      form.append("file", file);
-      const response = await fetch("/api/admin/schedule", { method: "POST", body: form });
-      const data = await response.json().catch(() => ({})) as { error?: string };
-      if (!response.ok) throw new Error(data.error || "Не удалось загрузить расписание");
+      await uploadAdminSchedule(kind, file);
       setMessage(kind === "osn" ? "Расписание ОСН обновлено" : "Расписание СПО обновлено");
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Ошибка загрузки");

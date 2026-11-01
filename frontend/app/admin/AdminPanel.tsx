@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import type { HeroSlide, NewsAccent, NewsItem } from "@/lib/contentTypes";
+import { uploadAdminImage } from "@/lib/adminBlobClient";
 import styles from "./admin.module.css";
 
 type AuthState = "loading" | "guest" | "admin";
@@ -97,14 +98,7 @@ export function AdminPanel() {
     setNews([]);
   };
 
-  const uploadImage = async (file: File) => {
-    const form = new FormData();
-    form.append("file", file);
-    const response = await fetch("/api/admin/upload", { method: "POST", body: form });
-    const data = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(data.error || "Не удалось загрузить изображение");
-    return String(data.url);
-  };
+  const uploadImage = async (file: File) => uploadAdminImage(file);
 
   const replaceHeroImage = async (slideId: string, file: File) => {
     setBusy(true);
@@ -192,7 +186,7 @@ export function AdminPanel() {
           <span className={styles.kicker}>МАТЕМАТИЧЕСКИЙ ФАКУЛЬТЕТ ВГУ</span>
           <h1>Админ-панель</h1>
           <p>Управление главными изображениями и новостями сайта.</p>
-          {!configured && <div className={styles.warning}>Сначала задайте MATFAK_ADMIN_PASSWORD в .env.local на сервере.</div>}
+          {!configured && <div className={styles.warning}>Сначала задайте MATFAK_ADMIN_PASSWORD в переменных окружения Vercel или в локальном .env.local.</div>}
           <form onSubmit={signIn}>
             <label>Логин<input value={login} onChange={(event) => setLogin(event.target.value)} autoComplete="username" /></label>
             <label>Пароль<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} autoComplete="current-password" /></label>

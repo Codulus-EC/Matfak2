@@ -40,7 +40,8 @@ function cleanItem(raw: Partial<NewsItem>, forcedSlug?: string): NewsItem {
   const kind = String(raw.kind || "Новость").trim().slice(0, 80);
   const date = String(raw.date || "").trim();
   const image = String(raw.image || "").trim();
-  if (!title || !excerpt || !/^\d{4}-\d{2}-\d{2}$/.test(date) || !image.startsWith("/")) {
+  const validImage = image.startsWith("/") || /^https:\/\//i.test(image);
+  if (!title || !excerpt || !/^\d{4}-\d{2}-\d{2}$/.test(date) || !validImage) {
     throw new Error("Заполните заголовок, описание, дату и изображение");
   }
   const tags = Array.from(new Set((Array.isArray(raw.tags) ? raw.tags : [])

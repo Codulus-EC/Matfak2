@@ -19,6 +19,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Требуется вход администратора" }, { status: 401 });
   }
 
+  // На Vercel локальная файловая система непостоянна. Этот маршрут оставлен
+  // только как fallback для обычного `npm run dev` без Vercel Blob.
+  if (process.env.VERCEL === "1") {
+    return NextResponse.json(
+      { error: "Vercel Blob не подключён. Создайте Public Blob store в Storage проекта." },
+      { status: 503 },
+    );
+  }
+
   const form = await request.formData();
   const file = form.get("file");
   if (!(file instanceof File)) {

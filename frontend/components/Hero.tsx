@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { HeroSlide } from "@/lib/contentTypes";
+import { uploadAdminImage } from "@/lib/adminBlobClient";
 import styles from "./Hero.module.css";
 
 const fallbackSlides: HeroSlide[] = [
@@ -94,11 +95,8 @@ export function Hero() {
   const quickReplaceImage = async (file: File) => {
     setUploading(true);
     try {
-      const form = new FormData(); form.append("file", file);
-      const uploadResponse = await fetch("/api/admin/upload", { method: "POST", body: form });
-      const uploadData = await uploadResponse.json();
-      if (!uploadResponse.ok) throw new Error(uploadData.error || "Ошибка загрузки");
-      const next = slides.map((item, index) => index === active ? { ...item, image: String(uploadData.url) } : item);
+      const imageUrl = await uploadAdminImage(file);
+      const next = slides.map((item, index) => index === active ? { ...item, image: imageUrl } : item);
       const saveResponse = await fetch("/api/admin/hero", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(next) });
       if (!saveResponse.ok) throw new Error("Не удалось сохранить hero");
       setSlides(next); setEditOpen(false);
